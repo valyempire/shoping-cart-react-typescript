@@ -1,18 +1,27 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
+import { Shop } from "./pages/shop";
+import { Contact } from "./pages/Contact";
+import { Cart } from "./pages/cart";
+import { ShopContextProvider } from "./context/shop-context";
+
 import "./App.css";
 
 export const App: React.FC = () => {
   return (
     <div className="App">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<h1>Shop</h1>} />
-          <Route path="/contact" element={<h1>Contact</h1>} />
-          <Route path="/cart" element={<h1>Cart</h1>} />
-        </Routes>
-      </Router>
+      <ShopContextProvider>
+        <Router>
+          <Navbar />
+          <div className="main-content">
+            <Switch>
+              <Route path="/" exact component={Shop} />
+              <Route path="/contact" exact component={Contact} />
+              <Route path="/cart" exact component={Cart} />
+            </Switch>
+          </div>
+        </Router>
+      </ShopContextProvider>
     </div>
   );
 };
