@@ -4,8 +4,8 @@ import { Shop } from "./pages/shop";
 import { Contact } from "./pages/Contact";
 import { Cart } from "./pages/cart";
 import { ShopContextProvider } from "./context/shop-context";
-
 import "./App.css";
+import { Footer } from "./components/Footer";
 
 export const App: React.FC = () => {
   return (
@@ -21,6 +21,7 @@ export const App: React.FC = () => {
             </Switch>
           </div>
         </Router>
+        <Footer />
       </ShopContextProvider>
     </div>
   );
