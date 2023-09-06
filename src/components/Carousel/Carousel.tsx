@@ -1,17 +1,17 @@
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import './Carousel.css';
-import { data } from '../../utils/data';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./Carousel.css";
+import { data } from "../../utils/data";
 
 const CustomPrevArrow = () => <div></div>;
 const CustomNextArrow = () => <div></div>;
 
 export const Carousel: React.FC = () => {
   const settings = {
-    className: 'center',
+    className: "center",
     centerMode: true,
-    centerPadding: '100px',
+    centerPadding: "100px",
     dots: true,
     infinite: true,
     speed: 500,
