@@ -1,13 +1,13 @@
-import { useContext } from 'react';
-import { ShopContext, ContextValueInterface } from '../../context/shop-context';
+import { useContext } from "react";
+import { ShopContext, ContextValueInterface } from "../../context/shop-context";
 
-import { CartItemProps } from './CartItem.types';
+import { CartItemProps } from "./CartItem.types";
 import {
   CartItemContainer,
   Image,
   Description,
   InputHandler,
-} from './CartItem.styles';
+} from "./CartItem.styles";
 
 export const CartItem: React.FC<CartItemProps> = (props) => {
   const { product } = props;

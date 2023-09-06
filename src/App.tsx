@@ -1,10 +1,10 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { Navbar } from "./components/Navbar";
-import { Shop } from "./pages/Shop";
+import { NavBar } from "./components/Navbar";
+import { Shop } from "./pages/shop";
 import { WishList } from "./pages/WishList";
-import { Cart } from "./pages/Cart";
+import { Cart } from "./pages/cart";
 import { ShopContextProvider } from "./context/shop-context";
 import { Footer } from "./components/Footer";
 import { Checkout } from "./components/Checkout";
@@ -16,7 +16,7 @@ export const App = () => {
     <div className="App">
       <ShopContextProvider>
         <Router>
-          <Navbar />
+          <NavBar />
           <div className="main-content">
             <Switch>
               <Route path="/" exact component={Shop} />

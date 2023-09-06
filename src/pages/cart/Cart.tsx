@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import { ShopContext, ContextValueInterface } from '../../context/shop-context';
-import { PRODUCTS } from '../../utils/products';
-import { CartItem } from '../../components/CartItem/CartItem';
-import { useHistory } from 'react-router-dom';
+import { useContext } from "react";
+import { ShopContext, ContextValueInterface } from "../../context/shop-context";
+import { PRODUCTS } from "../../utils/products";
+import { CartItem } from "../../components/CartItem/CartItem";
+import { useHistory } from "react-router-dom";
 
 import {
   Container,
@@ -10,7 +10,7 @@ import {
   CheckoutButton,
   CartMessage,
   ContainerChechout,
-} from './Cart.styles';
+} from "./Cart.styles";
 
 export const Cart = () => {
   const context = useContext<ContextValueInterface | null>(ShopContext);
@@ -18,7 +18,7 @@ export const Cart = () => {
 
   if (!context) {
     return (
-      <div className="cart" style={{ textAlign: 'center', padding: '10px' }}>
+      <div className="cart" style={{ textAlign: "center", padding: "10px" }}>
         <CartMessage>Your Shopping Cart is Empty</CartMessage>
       </div>
     );
@@ -45,13 +45,13 @@ export const Cart = () => {
         <ContainerChechout className="checkout">
           <p> Subtotal: ${totalAmount} </p>
           <div className="btn-checkout">
-            <CheckoutButton onClick={() => history.push('/')}>
+            <CheckoutButton onClick={() => history.push("/")}>
               Continue Shopping
             </CheckoutButton>
             <CheckoutButton
               onClick={() => {
                 checkout();
-                history.push('/checkout');
+                history.push("/checkout");
               }}
             >
               Checkout
