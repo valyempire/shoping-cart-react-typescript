@@ -76,3 +76,18 @@ export const Sort = styled("div")({
   alignItems: "center",
   marginLeft: 20,
 });
+
+export const CustomButton = styled(Button)(() => ({
+  backgroundColor: "#7493d0",
+  color: "#fff",
+  borderRadius: "8px",
+  padding: "10px 20px",
+  fontSize: "16px",
+  fontWeight: "bold",
+  textTransform: "uppercase",
+  transition: "background-color 0.3s ease",
+
+  "&:hover": {
+    backgroundColor: "#1c2331",
+  },
+}));
