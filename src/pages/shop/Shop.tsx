@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Item } from "../../components/Item/Item";
 import { Carousel } from "../../components/Carousel";
 import SearchIcon from "@mui/icons-material/Search";
@@ -10,8 +11,10 @@ import {
   Button,
   Sort,
 } from "./Shop.style";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import { PRODUCTS, ProductData } from "../../utils/products";
+import { ContextValueInterface, ShopContext } from "../../context/shop-context";
+import { NotificationPopup } from "../../components/NotificationPopup";
 
 export const Shop = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,6 +23,14 @@ export const Shop = () => {
     useState<ProductData[]>(PRODUCTS);
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc" | null>(null);
+
+  const context = useContext<ContextValueInterface | null>(ShopContext);
+
+  if (!context) {
+    return null;
+  }
+
+  const { showMessage } = context;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setSearchTerm(event.target.value);
@@ -98,6 +109,9 @@ export const Shop = () => {
           <Item key={product.id} product={product} />
         ))}
       </ProductsGrid>
+      {showMessage && (
+        <NotificationPopup message="Product has been added to your cart!" />
+      )}
 
       <div className="pagination">
         <button

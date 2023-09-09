@@ -17,7 +17,8 @@ export const Item: React.FC<ProductProps> = (props) => {
     return null;
   }
 
-  const { addToCart, cartItems, addToWishlist, removeFromWishlist } = context;
+  const { cartItems, addToWishlist, removeFromWishlist, addToCartWithMessage } =
+    context;
   const cartItemCount = cartItems[product.id];
 
   // Stare pentru a ține evidența dacă inima a fost apăsată sau nu
@@ -38,7 +39,6 @@ export const Item: React.FC<ProductProps> = (props) => {
   return (
     <Container className="product">
       <Link to={`/product/${product.id}`} key={product.id}>
-        {/* Adăugați ghilimele pentru a face șirul corect */}
         <Image src={product.productImage} />
       </Link>
       <Descriptions className="description">
@@ -50,7 +50,7 @@ export const Item: React.FC<ProductProps> = (props) => {
       <div style={{ display: "flex", alignItems: "center", gap: "160px" }}>
         <AddToCartButton
           className="addToCartBttn"
-          onClick={() => addToCart(product.id)}
+          onClick={() => addToCartWithMessage(product.id)}
         >
           Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
         </AddToCartButton>

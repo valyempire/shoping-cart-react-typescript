@@ -1,5 +1,5 @@
 /* eslint-disable prefer-const */
-import { ReactNode, createContext } from "react";
+import { ReactNode, createContext, useState } from "react";
 import { PRODUCTS, ProductData } from "../utils/products";
 import useLocalStorage from "use-local-storage";
 
@@ -18,17 +18,19 @@ export interface ShopContextProps {
 }
 
 export interface ContextValueInterface {
-  wishlist: WishlistItemProps; // Adaugăm wishlist în interfața ContextValueInterface
+  wishlist: WishlistItemProps;
   cartItems: CartItemProps;
+  showMessage: boolean;
   addToCart: (itemId: number) => void;
   updateCartItemCount: (newAmount: number, itemId: number) => void;
   removeFromCart: (itemId: number) => void;
   getTotalCartAmount: () => number;
   checkout: () => void;
-  addToWishlist: (itemId: number) => void; // Adaugăm metoda addToWishlist
+  addToWishlist: (itemId: number) => void;
   removeFromWishlist: (itemId: number) => void;
   getWishlistItemCount: () => number;
   getCartItemCount: () => number;
+  addToCartWithMessage: (itemId: number) => void;
 }
 
 const getDefaultCart = () => {
@@ -49,8 +51,9 @@ export const ShopContextProvider: React.FC<ShopContextProps> = (props) => {
 
   const [wishlist, setWishlist] = useLocalStorage<WishlistItemProps>(
     "wishlist",
-    {} // Inițial, wishlist este un obiect gol
+    {}
   );
+  const [showMessage, setShowMessage] = useState(false);
 
   const getTotalCartAmount = (): number => {
     let totalAmount = 0;
@@ -64,13 +67,23 @@ export const ShopContextProvider: React.FC<ShopContextProps> = (props) => {
     }
     return totalAmount;
   };
+
   const addToCart = (itemId: number): void => {
     setCartItems((prev) => {
       if (prev) {
         return { ...prev, [itemId]: prev[itemId] + 1 };
       }
-      return {}; // Returnați o valoare implicită în cazul în care prev este undefined
+      return {};
     });
+  };
+  const addToCartWithMessage = (itemId: number) => {
+    setShowMessage(true);
+
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
+
+    addToCart(itemId);
   };
 
   const removeFromCart = (itemId: number): void => {
@@ -78,7 +91,7 @@ export const ShopContextProvider: React.FC<ShopContextProps> = (props) => {
       if (prev) {
         return { ...prev, [itemId]: prev[itemId] - 1 };
       }
-      return {}; // Returnați o valoare implicită în cazul în care prev este undefined
+      return {};
     });
   };
 
@@ -86,7 +99,6 @@ export const ShopContextProvider: React.FC<ShopContextProps> = (props) => {
     setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
   };
 
-  // Adaugă o nouă metodă pentru adăugarea în lista de dorințe
   const addToWishlist = (itemId: number): void => {
     setWishlist((prev) => {
       if (prev) {
@@ -107,7 +119,6 @@ export const ShopContextProvider: React.FC<ShopContextProps> = (props) => {
     });
   };
 
-  // Funcție pentru a număra produsele selectate în Wishlist
   const getWishlistItemCount = (): number => {
     let count = 0;
     for (const itemId in wishlist) {
@@ -118,7 +129,6 @@ export const ShopContextProvider: React.FC<ShopContextProps> = (props) => {
     return count;
   };
 
-  // Funcție pentru a număra produsele selectate în cart
   const getCartItemCount = (): number => {
     let count = 0;
     for (const itemId in cartItems) {
@@ -134,17 +144,19 @@ export const ShopContextProvider: React.FC<ShopContextProps> = (props) => {
   };
 
   const contextValue: ContextValueInterface = {
-    wishlist, // Adăugăm wishlist în context
+    wishlist,
     cartItems,
+    showMessage,
     addToCart,
     updateCartItemCount,
     removeFromCart,
     getTotalCartAmount,
     checkout,
     removeFromWishlist,
-    addToWishlist, // Adăugăm metoda addToWishlist în context
+    addToWishlist,
     getWishlistItemCount,
     getCartItemCount,
+    addToCartWithMessage,
   };
 
   return (

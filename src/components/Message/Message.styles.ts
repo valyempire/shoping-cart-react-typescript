@@ -5,7 +5,7 @@ export const MessageContainer = styled("div")(({ theme }) => ({
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center center",
-  minHeight: "100vh", // Folosim minHeight în loc de height pentru a permite adaptarea pe ecrane mici
+  minHeight: "100vh",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
