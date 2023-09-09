@@ -1,0 +1,23 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 10; /* Modificăm pozitia la dreapta */
+  /* background-color: rgba(245, 245, 245); */
+  display: flex;
+  justify-content: flex-end; /* Afișăm mesajul în partea dreaptă a paginii */
+  align-items: flex-end; /* Afișăm mesajul în partea dreaptă a paginii */
+  height: 10vh;
+  z-index: 9999;
+  padding: 10px; /* Adăugăm un spațiu în jurul mesajului */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal p {
+  background-color: rgb(243, 0, 0);
+  padding: 20px;
+  font-size: 55;
+  border-radius: 5px;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

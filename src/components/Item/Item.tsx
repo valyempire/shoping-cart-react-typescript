@@ -2,11 +2,19 @@
 import React, { useContext, useState } from "react";
 import { ContextValueInterface, ShopContext } from "../../context/shop-context";
 import { ProductProps } from "./Item.types";
-import { Container, Image, Descriptions, AddToCartButton } from "./Item.styles";
+import {
+  Container,
+  Image,
+  Descriptions,
+  AddToCartButton,
+  ProductName,
+  ProductType,
+} from "./Item.styles";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
+import { Modal } from "../Modal/Modal";
 
 export const Item: React.FC<ProductProps> = (props) => {
   const { product } = props;
@@ -17,23 +25,49 @@ export const Item: React.FC<ProductProps> = (props) => {
     return null;
   }
 
-  const { cartItems, addToWishlist, removeFromWishlist, addToCartWithMessage } =
-    context;
+  const { addToCart, cartItems, addToWishlist, removeFromWishlist } = context;
   const cartItemCount = cartItems[product.id];
 
-  // Stare pentru a ține evidența dacă inima a fost apăsată sau nu
   const [isHeartPressed, setIsHeartPressed] = useState(false);
 
-  // Funcție pentru a inversa starea iconiței atunci când se face click
+  // const [showMessage, setShowMessage] = useState(false);
+  const [showCartMessage, setShowCartMessage] = useState(false); // Adaugă această variabilă
+  const [showWishlistMessage, setShowWishlistMessage] = useState(false); // Adaugă această variabilă
+  const [showDeleteMessage, setShowDeleteMessage] = useState(false);
+
+  const addWishWithMessage = (itemId: number) => {
+    setShowWishlistMessage(true);
+
+    setTimeout(() => {
+      setShowWishlistMessage(false);
+    }, 3000);
+
+    addToWishlist(itemId);
+  };
+
   const toggleHeart = () => {
-    // Dacă inima nu a fost apăsată încă, o marcăm ca apăsată
     if (!isHeartPressed) {
       setIsHeartPressed(true);
-      addToWishlist(product.id); // Adaugă în lista de dorințe
+      addWishWithMessage(product.id);
+      setShowWishlistMessage(true);
     } else {
       setIsHeartPressed(false);
       removeFromWishlist(product.id);
+      setShowDeleteMessage(true); // Afișează mesajul atunci când elimină din wishlist
+      setTimeout(() => {
+        setShowDeleteMessage(false);
+      }, 3000);
     }
+  };
+
+  const addToCartWithMessage = (itemId: number) => {
+    setShowCartMessage(true);
+
+    setTimeout(() => {
+      setShowCartMessage(false);
+    }, 3000);
+
+    addToCart(itemId);
   };
 
   return (
@@ -42,9 +76,11 @@ export const Item: React.FC<ProductProps> = (props) => {
         <Image src={product.productImage} />
       </Link>
       <Descriptions className="description">
-        <p>
+        <ProductName className="product-name">
           <b>{product.productName}</b>
-        </p>
+          <ProductType className="product-type">{product.type}</ProductType>
+        </ProductName>
+        <p style={{ textDecoration: "line-through" }}>${product.discount}</p>
         <p> ${product.price}</p>
       </Descriptions>
       <div style={{ display: "flex", alignItems: "center", gap: "160px" }}>
@@ -70,6 +106,24 @@ export const Item: React.FC<ProductProps> = (props) => {
           />
         </button>
       </div>
+      {showCartMessage && (
+        <Modal
+          showMessage={showCartMessage}
+          messageText="Product added to cart!"
+        />
+      )}
+      {showWishlistMessage && (
+        <Modal
+          showMessage={showWishlistMessage}
+          messageText="Product added to wishlist!"
+        />
+      )}
+      {showDeleteMessage && (
+        <Modal
+          showMessage={showDeleteMessage}
+          messageText="Product was deleted!"
+        />
+      )}
     </Container>
   );
 };

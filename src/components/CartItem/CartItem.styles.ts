@@ -1,4 +1,5 @@
 import { styled } from "@mui/system";
+import { Button } from "@mui/material";
 
 export const CartItemContainer = styled("div")(({ theme }) => {
   return {
@@ -55,4 +56,68 @@ export const InputHandler = styled("input")({
   width: "40px",
   textAlign: "center",
   fontWeight: "bolder",
+});
+
+export const ProductName = styled("div")(({ theme }) => {
+  return {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    marginTop: 10,
+
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 25,
+      padding: 10,
+    },
+  };
+});
+export const Price = styled("p")({
+  marginTop: 8,
+  marginBottom: -23,
+});
+export const Discount = styled("p")({
+  marginBottom: 0,
+  textDecoration: "line-through",
+});
+
+export const CountHandler = styled("div")(({ theme }) => {
+  return {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 10,
+    },
+  };
+});
+
+export const StylesButton = styled(Button)(({ theme }) => ({
+  backgroundColor: "#7493d0",
+  color: "#fff",
+  borderRadius: "8px",
+  padding: "10px 20px",
+  fontSize: "16px",
+  fontWeight: "bold",
+  textTransform: "uppercase",
+  transition: "background-color 0.3s ease",
+  height: 20,
+  marginTop: 4,
+
+  "&:hover": {
+    backgroundColor: "#1c2331",
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    marginTop: 8,
+  },
+}));
+
+export const StylesParagraph = styled("p")(({ theme }) => {
+  return {
+    fontWeight: 600,
+    marginTop: 20,
+    marginBottom: 0,
+    textAlign: "center",
+    fontSize: 23,
+    color: "red",
+    [theme.breakpoints.down("sm")]: {},
+  };
 });
