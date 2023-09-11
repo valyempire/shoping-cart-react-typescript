@@ -14,7 +14,6 @@ import {
 import { useEffect, useState, useRef, useContext } from "react";
 import { PRODUCTS, ProductData } from "../../utils/products";
 import { ContextValueInterface, ShopContext } from "../../context/shop-context";
-import { NotificationPopup } from "../../components/NotificationPopup";
 
 export const Shop = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,8 +28,6 @@ export const Shop = () => {
   if (!context) {
     return null;
   }
-
-  const { showMessage } = context;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setSearchTerm(event.target.value);
@@ -109,9 +106,6 @@ export const Shop = () => {
           <Item key={product.id} product={product} />
         ))}
       </ProductsGrid>
-      {showMessage && (
-        <NotificationPopup message="Product has been added to your cart!" />
-      )}
 
       <div className="pagination">
         <button

@@ -1,6 +1,6 @@
-// /**
-//  * Imports styled
-//  */
+/**
+ * Imports styled
+ */
 import { styled } from "@mui/system";
 
 export const Container = styled("div")(({ theme }) => {
@@ -8,7 +8,6 @@ export const Container = styled("div")(({ theme }) => {
     borderRadius: "15px",
     width: "90%",
     height: "100%",
-    // margin: '15px',
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",

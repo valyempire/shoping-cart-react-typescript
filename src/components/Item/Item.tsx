@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
-import { Modal } from "../Modal/Modal";
+import { PopupMessage } from "../PopupMessage/PopupMessage";
 
 export const Item: React.FC<ProductProps> = (props) => {
   const { product } = props;
@@ -40,7 +40,7 @@ export const Item: React.FC<ProductProps> = (props) => {
 
     setTimeout(() => {
       setShowWishlistMessage(false);
-    }, 3000);
+    }, 2000);
 
     addToWishlist(itemId);
   };
@@ -56,7 +56,7 @@ export const Item: React.FC<ProductProps> = (props) => {
       setShowDeleteMessage(true); // Afișează mesajul atunci când elimină din wishlist
       setTimeout(() => {
         setShowDeleteMessage(false);
-      }, 3000);
+      }, 2000);
     }
   };
 
@@ -65,7 +65,7 @@ export const Item: React.FC<ProductProps> = (props) => {
 
     setTimeout(() => {
       setShowCartMessage(false);
-    }, 3000);
+    }, 2000);
 
     addToCart(itemId);
   };
@@ -107,19 +107,19 @@ export const Item: React.FC<ProductProps> = (props) => {
         </button>
       </div>
       {showCartMessage && (
-        <Modal
+        <PopupMessage
           showMessage={showCartMessage}
           messageText="Product added to cart!"
         />
       )}
       {showWishlistMessage && (
-        <Modal
+        <PopupMessage
           showMessage={showWishlistMessage}
           messageText="Product added to wishlist!"
         />
       )}
       {showDeleteMessage && (
-        <Modal
+        <PopupMessage
           showMessage={showDeleteMessage}
           messageText="Product was deleted!"
         />
