@@ -13,7 +13,7 @@ import {
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { CustomButton } from "../../pages/shop/Shop.style";
+import { CustomButton } from "../../pages/Shop/Shop.style";
 
 export const Message = () => {
   return (

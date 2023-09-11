@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+// import logo from "../../assets/logo/logo.png";
 import { Heart, ShoppingCart, Storefront } from "phosphor-react";
 
 import { useState } from "react";
@@ -74,14 +75,14 @@ export const NavBar: React.FC = () => {
               <span
                 style={{
                   marginLeft: "0px",
-                  fontSize: "12px", // Mărimea textului pentru cifră
-                  fontWeight: "bold", // Stilul textului pentru cifră
-                  backgroundColor: "#ff0000", // Fundal pentru cifră
-                  color: "#ffffff", // Culoarea textului pentru cifră
-                  borderRadius: "50%", // Rotunjirea pentru cifră
-                  padding: "2px 6px", // Spațierea pentru cifră
-                  position: "relative", // Poziționare relativă pentru a se suprapune peste inimă
-                  top: "0px", // Ajustarea poziției pe verticală pentru a se suprapune
+                  fontSize: "12px",
+                  fontWeight: "bold",
+                  backgroundColor: "#ff0000",
+                  color: "#ffffff",
+                  borderRadius: "50%",
+                  padding: "2px 6px",
+                  position: "relative",
+                  top: "0px",
                 }}
               >
                 {getWishlistItemCount()}
@@ -96,14 +97,14 @@ export const NavBar: React.FC = () => {
               <span
                 style={{
                   marginLeft: "0px",
-                  fontSize: "12px", // Mărimea textului pentru cifră
-                  fontWeight: "bold", // Stilul textului pentru cifră
-                  backgroundColor: "#ff0000", // Fundal pentru cifră
-                  color: "#ffffff", // Culoarea textului pentru cifră
-                  borderRadius: "50%", // Rotunjirea pentru cifră
-                  padding: "2px 6px", // Spațierea pentru cifră
-                  position: "relative", // Poziționare relativă pentru a se suprapune peste inimă
-                  top: "0px", // Ajustarea poziției pe verticală pentru a se suprapune
+                  fontSize: "12px",
+                  fontWeight: "bold",
+                  backgroundColor: "#ff0000",
+                  color: "#ffffff",
+                  borderRadius: "50%",
+                  padding: "2px 6px",
+                  position: "relative",
+                  top: "0px",
                 }}
               >
                 {getCartItemCount()}
@@ -138,7 +139,8 @@ export const NavBar: React.FC = () => {
       <ContainerWrapper>
         <ContainerParagraph>
           <Link style={{ textDecoration: "none" }} to="/">
-            <Paragraph>Iulian Shop</Paragraph>
+            <Paragraph>IT Shop</Paragraph>
+            {/* <img src={logo} alt="" /> */}
           </Link>
         </ContainerParagraph>
         {!isMobileView && navbarContent}

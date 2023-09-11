@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavBar } from "./components/Navbar";
-import { Shop } from "./pages/shop";
+import { Shop } from "./pages/Shop";
 import { WishList } from "./pages/WishList";
-import { Cart } from "./pages/cart";
+import { Cart } from "./pages/Cart";
 import { ShopContextProvider } from "./context/shop-context";
 import { Footer } from "./components/Footer";
 import { Checkout } from "./components/Checkout";
