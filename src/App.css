@@ -9,17 +9,8 @@
   min-height: calc(100vh - 100px);
   padding-bottom: 60px;
   position: relative;
-  background-image: url("./assets/products/shopping-pattern-background-design_260839-17.jpg");
+  background-color: #ebc69a;
 }
-
-/* footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #fabe5a;
-  padding: 1rem 0;
-  text-align: center;
-} */
 
 .App {
   width: 100%;

@@ -62,10 +62,10 @@ export const ShopContextProvider: React.FC<ShopContextProps> = (props) => {
         let itemInfo = PRODUCTS.find(
           (product) => product.id === Number(item)
         ) as ProductData;
-        totalAmount += cartItems[item] * itemInfo.price; // Adăugare virgulă aici
+        totalAmount += cartItems[item] * itemInfo.price;
       }
     }
-    return totalAmount;
+    return parseFloat(totalAmount.toFixed(2));
   };
 
   const addToCart = (itemId: number): void => {

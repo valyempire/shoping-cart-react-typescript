@@ -8,12 +8,16 @@ import {
   ProductsGrid,
   SearchBar,
   SearchContainer,
-  Button,
   Sort,
+  StylesButton,
+  InputContainer,
+  Label,
+  Select,
+  CustomButton,
+  CustomSpan,
 } from "./Shop.style";
-import { useEffect, useState, useRef, useContext } from "react";
+import { useEffect, useState, useRef } from "react";
 import { PRODUCTS, ProductData } from "../../utils/products";
-import { ContextValueInterface, ShopContext } from "../../context/shop-context";
 
 export const Shop = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,12 +26,6 @@ export const Shop = () => {
     useState<ProductData[]>(PRODUCTS);
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc" | null>(null);
-
-  const context = useContext<ContextValueInterface | null>(ShopContext);
-
-  if (!context) {
-    return null;
-  }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setSearchTerm(event.target.value);
@@ -40,9 +38,18 @@ export const Shop = () => {
     setCurrentPage(1);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   const handleSortOrderChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOrder(e.target.value as "asc" | "desc" | null);
   };
+
+  const windowHeight = window.innerHeight;
+  const halfPageY = windowHeight / 2;
 
   useEffect(() => {
     if (inputRef.current) {
@@ -79,25 +86,33 @@ export const Shop = () => {
     <ShopContainer className="shop">
       <Carousel />
       <SearchContainer>
-        <SearchBar
-          type="text"
-          placeholder="Search products..."
-          value={searchTerm}
-          onChange={handleChange}
-          ref={inputRef}
-        />
-        <Button className="btn-search" onClick={handleSearch}>
-          <SearchIcon />
-        </Button>
+        <InputContainer className="input-container">
+          <SearchBar
+            type="text"
+            placeholder="Search products..."
+            value={searchTerm}
+            onChange={handleChange}
+            ref={inputRef}
+            onKeyDown={handleKeyDown}
+          />
+          <StylesButton
+            className="btn-search"
+            type="button"
+            onClick={handleSearch}
+          >
+            <SearchIcon />
+          </StylesButton>
+        </InputContainer>
+
         <Sort className="sort">
-          <label>
+          <Label>
             Sort by price:
-            <select onChange={handleSortOrderChange} value={sortOrder || ""}>
+            <Select onChange={handleSortOrderChange} value={sortOrder || ""}>
               <option value="">Select </option>
               <option value="asc">Price: Low to High</option>
               <option value="desc">Price: High to Low</option>
-            </select>
-          </label>
+            </Select>
+          </Label>
         </Sort>
       </SearchContainer>
 
@@ -108,19 +123,25 @@ export const Shop = () => {
       </ProductsGrid>
 
       <div className="pagination">
-        <button
+        <CustomButton
           disabled={currentPage === 1}
-          onClick={() => setCurrentPage((prevstate) => prevstate - 1)}
+          onClick={() => {
+            setCurrentPage((prevstate) => prevstate - 1);
+            window.scrollTo(0, halfPageY);
+          }}
         >
-          Previous
-        </button>
-        <span>{currentPage}</span>
-        <button
+          Prev
+        </CustomButton>
+        <CustomSpan>{currentPage}</CustomSpan>
+        <CustomButton
           disabled={lastIndex >= filteredProducts.length}
-          onClick={() => setCurrentPage((prevstate) => prevstate + 1)}
+          onClick={() => {
+            setCurrentPage((prevstate) => prevstate + 1);
+            window.scrollTo(0, halfPageY);
+          }}
         >
           Next
-        </button>
+        </CustomButton>
       </div>
     </ShopContainer>
   );

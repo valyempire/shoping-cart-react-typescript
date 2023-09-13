@@ -21,7 +21,7 @@ export const Message = () => {
       <MessageContent>
         <MessageTitle>Thank you for shopping!</MessageTitle>
         <MessageSubtitle>
-          Enjoy 10% off your next purchase with code: Iulian-Gradiaru
+          Enjoy 10% off your next purchase with code: Valerica Bocanel
         </MessageSubtitle>
         <MessageParagraph>Connect with Us!</MessageParagraph>
         <SocialLinks>

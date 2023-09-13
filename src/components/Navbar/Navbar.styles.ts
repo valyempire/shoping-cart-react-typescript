@@ -110,7 +110,7 @@ export const CustomNavLink = styled(NavLink, {
     textAlign: "center",
     fontSize: 30,
     position: "relative",
-    color: "#000000",
+    color: "red",
     "&::after": {
       width: "0%",
       height: 4,
