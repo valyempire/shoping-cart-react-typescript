@@ -1,7 +1,6 @@
 import { styled } from "@mui/system";
 
 export const MessageContainer = styled("div")(({ theme }) => ({
-  backgroundImage: "url('background.jpg')",
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center center",

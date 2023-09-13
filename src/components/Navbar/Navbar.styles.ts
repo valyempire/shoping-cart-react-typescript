@@ -15,7 +15,7 @@ import { CustomNavLinkProps } from "./NavBar.types";
  */
 export const Container = styled("nav")(({ theme }) => {
   return {
-    backgroundColor: "#fabe5a",
+    backgroundColor: "#1c2331",
     // height: '8vh',
     display: "flex",
     justifyContent: "space-between",
@@ -31,6 +31,7 @@ export const Container = styled("nav")(({ theme }) => {
       flexDirection: "column",
       height: "auto",
       marginBottom: -10,
+      width: "52vh",
     },
   };
 });
@@ -84,11 +85,14 @@ export const Paragraph = styled("p")(({ theme }) => {
 /**
  * Styles the Container Links
  */
-export const ContainerLinks = styled("div")(() => {
+export const ContainerLinks = styled("div")(({ theme }) => {
   return {
     paddingRight: 36,
     display: "flex",
     gap: 20,
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: 44,
+    },
   };
 });
 
@@ -171,4 +175,31 @@ export const MobileNavLink = styled(NavLink)(({ theme }) => {
       textAlign: "center",
     },
   };
+});
+
+export const CustomLogo = styled("img")(() => {
+  return {
+    width: 50,
+    height: 50,
+    borderRadius: "38%",
+    marginLeft: 30,
+    marginTop: 4,
+  };
+});
+
+export const WishlistContainer = styled("div")({
+  display: "flex",
+  alignItems: "flex-start",
+});
+
+export const WishlistCounter = styled("span")({
+  marginLeft: "0px",
+  fontSize: "12px",
+  fontWeight: "bold",
+  backgroundColor: "#ff0000",
+  color: "#ffffff",
+  borderRadius: "50%",
+  padding: "2px 6px",
+  position: "relative",
+  top: "0px",
 });

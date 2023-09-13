@@ -1,15 +1,28 @@
-// ProductDescription.tsx
+/* eslint-disable react-hooks/rules-of-hooks */
 
-import React from 'react';
-import { useParams } from 'react-router-dom'; // Pentru a prelua id-ul produsului din URL
-import { PRODUCTS } from '../../utils/products';
-import { useContext } from 'react';
-import { ContextValueInterface, ShopContext } from '../../context/shop-context';
-{
-}
-import { InputHandler } from './ProductDesriptions.styles';
-import { Description } from '../CartItem/CartItem.styles';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useParams } from "react-router-dom"; // Pentru a prelua id-ul produsului din URL
+import { PRODUCTS } from "../../utils/products";
+import { useContext } from "react";
+import { ContextValueInterface, ShopContext } from "../../context/shop-context";
+import { CustomButton } from "../../pages/Shop/Shop.style";
+import {
+  InputHandler,
+  Description,
+  CustomImage,
+  ContainerProduct,
+  Paragraph,
+  Price,
+  ContainerButtons,
+  StylesButton,
+  StylesParagraph,
+  CountHandler,
+  Title,
+  ProductName,
+  ProductDescriptionsTitle,
+} from "./ProductDesriptions.styles";
+import { Link } from "react-router-dom";
+import { ProductType } from "../Item/Item.styles";
 
 export const ProductDescriptions: React.FC = () => {
   const context = useContext<ContextValueInterface | null>(ShopContext);
@@ -20,49 +33,62 @@ export const ProductDescriptions: React.FC = () => {
 
   const { cartItems, addToCart, removeFromCart, updateCartItemCount } = context;
 
-  const { productId } = useParams<{ productId: string }>(); // Preia id-ul produsului din URL
+  const { productId } = useParams<{ productId: string }>();
   const product = PRODUCTS.find((p) => p.id === parseInt(productId, 10));
 
   if (!product) {
-    return <div>Produsul nu a fost găsit.</div>;
+    return <div>Product not found.</div>;
   }
 
   return (
     <div>
-      <img src={product.productImage} />
-      <h2>{product.productName}</h2>
-      <p>{product.descriptions}</p>
-
+      <ProductDescriptionsTitle>Product Descriptions</ProductDescriptionsTitle>
       <Description className="description">
-        <p>
-          <b>{product.productName}</b>
-        </p>
-        <p> Price: ${product.price}</p>
-        <div className="countHandler">
-          <p>Add To Cart</p>
-          <button
-            disabled={cartItems[product.id] <= 0}
-            onClick={() => removeFromCart(product.id)}
-          >
-            -
-          </button>
+        <div>
+          <CustomImage src={product.productImage} />
+          <Price style={{ textDecoration: "line-through" }}>
+            Price: ${product.discount}
+          </Price>
+          <Price> Price: ${product.price}</Price>
 
-          <InputHandler
-            value={cartItems[product.id]}
-            onChange={(e) =>
-              updateCartItemCount(Number(e.target.value), product.id)
-            }
-          />
+          <CountHandler className="countHandler">
+            <StylesParagraph>Add To Cart</StylesParagraph>
+            <StylesButton
+              disabled={cartItems[product.id] <= 0}
+              onClick={() => removeFromCart(product.id)}
+            >
+              -
+            </StylesButton>
 
-          <button onClick={() => addToCart(product.id)}> + </button>
+            <InputHandler
+              value={cartItems[product.id]}
+              onChange={(e) =>
+                updateCartItemCount(Number(e.target.value), product.id)
+              }
+            />
+
+            <StylesButton onClick={() => addToCart(product.id)}>
+              {" "}
+              +{" "}
+            </StylesButton>
+          </CountHandler>
         </div>
+        <ContainerProduct className="containerProduct">
+          <ProductName className="product-name">
+            <Title>{product.productName}</Title>
+            <ProductType className="product-type">{product.type}</ProductType>
+          </ProductName>
+          <Paragraph>{product.descriptions}</Paragraph>
+        </ContainerProduct>
       </Description>
-      <Link to={'/'}>
-        <button>Go to Shop</button>
-      </Link>
-      <Link to={'/cart'}>
-        <button>Go to Cart</button>
-      </Link>
+      <ContainerButtons className="container-buttons">
+        <Link to={"/"}>
+          <CustomButton>Go to Shop</CustomButton>
+        </Link>
+        <Link to={"/cart"}>
+          <CustomButton>Go to Cart</CustomButton>
+        </Link>
+      </ContainerButtons>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { ModalContainer, ModalText } from "./PopupMessage.styles";
+import { Container, Text } from "./PopupMessage.styles";
 ("./Modal.styles.ts");
 
 import { PopupMessageProps } from "./PopupMessage.types";
@@ -8,8 +8,8 @@ export const PopupMessage: React.FC<PopupMessageProps> = ({
   messageText,
 }) => {
   return showMessage ? (
-    <ModalContainer>
-      <ModalText>{messageText}</ModalText>
-    </ModalContainer>
+    <Container>
+      <Text>{messageText}</Text>
+    </Container>
   ) : null;
 };

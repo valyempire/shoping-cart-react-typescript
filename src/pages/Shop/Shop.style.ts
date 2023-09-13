@@ -81,12 +81,13 @@ export const CustomButton = styled(Button)(() => ({
   backgroundColor: "#7493d0",
   color: "#fff",
   borderRadius: "8px",
-  padding: "10px 20px",
+  padding: "21px 70px",
   fontSize: "16px",
   fontWeight: "bold",
   textTransform: "uppercase",
   transition: "background-color 0.3s ease",
-
+  whiteSpace: "nowrap",
+  // textDecoration: "none",
   "&:hover": {
     backgroundColor: "#1c2331",
   },

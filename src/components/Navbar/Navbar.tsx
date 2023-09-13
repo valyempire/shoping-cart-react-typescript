@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-// import logo from "../../assets/logo/logo.png";
 import { Heart, ShoppingCart, Storefront } from "phosphor-react";
 
 import { useState } from "react";
@@ -24,6 +23,9 @@ import {
   CustomNavLink,
   MobileNavLink,
   ContainerWrapper,
+  // CustomLogo,
+  WishlistContainer,
+  WishlistCounter,
 } from "./Navbar.styles";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -64,53 +66,40 @@ export const NavBar: React.FC = () => {
    */
   const navbarContent = (
     <>
-      <ContainerLinks>
-        <CustomNavLink exact={true} to="/" activeStyle={{ color: "#ffff" }}>
+      <ContainerLinks className="iulian">
+        <CustomNavLink
+          exact={true}
+          to="/"
+          activeStyle={{ color: "#ffff" }}
+          title="Shop"
+        >
           <Storefront size={32} />
         </CustomNavLink>
-        <CustomNavLink exact to="/wishlist" activeStyle={{ color: "#ffff" }}>
-          <div style={{ display: "flex", alignItems: "flex-start" }}>
+        <CustomNavLink
+          exact
+          to="/wishlist"
+          activeStyle={{ color: "#ffff" }}
+          title="Wishlist"
+        >
+          <WishlistContainer>
             <Heart size={32} />
             {getWishlistItemCount() > 0 && (
-              <span
-                style={{
-                  marginLeft: "0px",
-                  fontSize: "12px",
-                  fontWeight: "bold",
-                  backgroundColor: "#ff0000",
-                  color: "#ffffff",
-                  borderRadius: "50%",
-                  padding: "2px 6px",
-                  position: "relative",
-                  top: "0px",
-                }}
-              >
-                {getWishlistItemCount()}
-              </span>
+              <WishlistCounter>{getWishlistItemCount()}</WishlistCounter>
             )}
-          </div>
+          </WishlistContainer>
         </CustomNavLink>
-        <CustomNavLink exact to="/cart" activeStyle={{ color: "#ffff" }}>
-          <div style={{ display: "flex", alignItems: "flex-start" }}>
+        <CustomNavLink
+          exact
+          to="/cart"
+          activeStyle={{ color: "#ffff" }}
+          title="Cart"
+        >
+          <WishlistContainer>
             <ShoppingCart size={32} />
             {getCartItemCount() > 0 && (
-              <span
-                style={{
-                  marginLeft: "0px",
-                  fontSize: "12px",
-                  fontWeight: "bold",
-                  backgroundColor: "#ff0000",
-                  color: "#ffffff",
-                  borderRadius: "50%",
-                  padding: "2px 6px",
-                  position: "relative",
-                  top: "0px",
-                }}
-              >
-                {getCartItemCount()}
-              </span>
+              <WishlistCounter>{getCartItemCount()}</WishlistCounter>
             )}
-          </div>
+          </WishlistContainer>
         </CustomNavLink>
       </ContainerLinks>
       <MobileMenu isOpen={isMobileMenuOpen} to={""}>
@@ -120,15 +109,23 @@ export const NavBar: React.FC = () => {
           activeStyle={{ color: "#ffff" }}
           onClick={toggleMobileMenu}
         >
-          Home
+          <Storefront size={32} />
         </MobileNavLink>
         <MobileNavLink
           exact
-          to="/projects"
+          to="/wistlist"
           activeStyle={{ color: "#ffff" }}
           onClick={toggleMobileMenu}
         >
-          Projects
+          <Heart size={32} />
+        </MobileNavLink>
+        <MobileNavLink
+          exact
+          to="/cart"
+          activeStyle={{ color: "#ffff" }}
+          onClick={toggleMobileMenu}
+        >
+          <ShoppingCart size={32} />
         </MobileNavLink>
       </MobileMenu>
     </>
