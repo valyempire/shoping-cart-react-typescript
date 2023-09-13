@@ -1,42 +1,56 @@
 /**
  * Import styled
  */
-import { styled } from '@mui/system';
+import { styled } from "@mui/system";
 
 /**
  * Stiled the FooterContainer
  */
-export const FooterContainer = styled('footer')(() => {
+export const FooterContainer = styled("footer")(({ theme }) => {
   return {
-    textAlign: 'center',
-    // position: 'fixed',
-    // left: 0,
-    // bottom: 0,
-    width: '100%',
+    textAlign: "center",
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      width: "52vh",
+    },
   };
 });
-
 /**
  * Stiled the SocialWrapper
  */
-export const SocialWrapper = styled('div')(() => {
+export const SocialWrapper = styled("div")(({ theme }) => {
   return {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'hsl(248.64deg 56.05% 56.27%)',
-    color: 'white',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#161c27",
+    color: "white",
     padding: 7,
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
+  };
+});
+
+export const ContainerParagraph = styled("div")(({ theme }) => {
+  return {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
   };
 });
 
 /**
  * Stiled the SocialParagraph
  */
-export const SocialParagraph = styled('p')(() => {
+export const SocialParagraph = styled("p")(() => {
   return {
-    textAlign: 'left',
-    marginRight: 'auto',
+    textAlign: "left",
+    marginRight: "auto",
     marginLeft: 20,
   };
 });
@@ -44,58 +58,62 @@ export const SocialParagraph = styled('p')(() => {
 /**
  * Stiled the IconLink
  */
-export const IconLink = styled('a')(() => {
+export const IconLink = styled("a")(() => {
   return {
     marginLeft: 20,
     marginRight: 20,
-    color: 'white',
+    color: "white",
   };
 });
 
 /**
  * Stiled the RowWrapper
  */
-export const RowWrapper = styled('div')(() => {
+export const RowWrapper = styled("div")(() => {
   return {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    flexWrap: 'wrap',
-    backgroundColor: 'hsl(220deg 27.27% 15.1%)',
-    color: 'white',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    flexWrap: "wrap",
+    backgroundColor: "hsl(220deg 27.27% 15.1%)",
+    color: "white",
   };
 });
 
 /**
  * Stiled the ColumnWrapper
  */
-export const ColumnWrapper = styled('div')(() => {
+export const ColumnWrapper = styled("div")(() => {
   return {
-    margin: '0 20px',
+    margin: "0 20px",
     width: 200,
-    textAlign: 'left',
+    textAlign: "left",
   };
 });
 
 /**
  * Stiled the ColumnHeading
  */
-export const ColumnHeading = styled('p')(() => {
+export const ColumnHeading = styled("p")(() => {
   return {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10,
-    position: 'relative',
-    display: 'inline-block',
+    position: "relative",
+    display: "inline-block",
+    "&:hover": {
+      cursor: "pointer",
+      color: "#7493d0",
+    },
   };
 });
 
 /**
  * Stiled the RightsWrapper
  */
-export const RightsWrapper = styled('div')(() => {
+export const RightsWrapper = styled("div")(() => {
   return {
-    backgroundColor: 'hsl(218.82deg 27.87% 11.96%)',
-    color: 'white',
+    backgroundColor: "#161c27",
+    color: "white",
     fontSize: 17,
     padding: 16,
   };
@@ -104,43 +122,61 @@ export const RightsWrapper = styled('div')(() => {
 /**
  * Stiled the Link
  */
-export const Link = styled('a')(() => {
+export const Link = styled("a")(() => {
   return {
-    color: '#ffffff',
-    textDecoration: 'inherit',
+    marginLeft: 5,
+    color: "#ffffff",
+    textDecoration: "inherit",
+    "&:hover": {
+      cursor: "pointer",
+      color: "#7493d0",
+    },
   };
 });
 
 /**
  * Stiled the ContactInfo
  */
-export const ContactInfo = styled('p')(() => {
+export const ContactInfo = styled("p")(() => {
   return {
-    display: 'flex',
-    alignItems: 'center',
-    whiteSpace: 'nowrap',
+    display: "flex",
+    alignItems: "center",
+    whiteSpace: "nowrap",
   };
 });
 
 /**
  * Stiled the IconWrapper
  */
-export const IconWrapper = styled('span')(() => {
+export const IconWrapper = styled("span")(() => {
   return {
     marginLeft: 5,
+    "&:hover": {
+      cursor: "pointer",
+      color: "#7493d0",
+    },
   };
 });
 
 /**
  * Stiled the Underline
  */
-export const Underline = styled('span')(() => {
+export const Underline = styled("span")(() => {
   return {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     left: 0,
-    width: '50%',
+    width: "50%",
     height: 1,
-    backgroundColor: 'hsl(220deg 29.77% 41.63%)',
+    backgroundColor: "hsl(220deg 29.77% 41.63%)",
+  };
+});
+
+export const Paragraph = styled("p")(() => {
+  return {
+    "&:hover": {
+      cursor: "pointer",
+      color: "#7493d0",
+    },
   };
 });
