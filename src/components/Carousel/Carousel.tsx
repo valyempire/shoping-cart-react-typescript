@@ -1,8 +1,8 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./Carousel.css";
 import { data } from "../../utils/data";
+import { CarouselContainer } from "./Carousel.styles";
 
 const CustomPrevArrow = () => <div></div>;
 const CustomNextArrow = () => <div></div>;
@@ -33,7 +33,7 @@ export const Carousel: React.FC = () => {
   };
 
   return (
-    <div className="carousel">
+    <CarouselContainer className="carousel">
       <Slider {...settings}>
         {data.map((item) => (
           <div className="box" key={item.id}>
@@ -41,6 +41,6 @@ export const Carousel: React.FC = () => {
           </div>
         ))}
       </Slider>
-    </div>
+    </CarouselContainer>
   );
 };

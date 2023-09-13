@@ -11,7 +11,6 @@ export const CartItemContainer = styled("div")(({ theme }) => {
     boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
     borderRadius: "25px",
     margin: "30px",
-    // marginBottom: 20,
     [theme.breakpoints.down("sm")]: {
       width: "85%",
       margin: 10,
@@ -24,15 +23,24 @@ export const CartItemContainer = styled("div")(({ theme }) => {
   };
 });
 
-export const Image = styled("img")({
-  width: "150px",
+export const Image = styled("img")(({ theme }) => ({
+  width: "260px",
   padding: "10px",
   transition: "transform 0.3s ease-in",
+  margin: 10,
+  borderRadius: 20,
+
   "&:hover": {
     transform: "scale(1.1)",
     cursor: "pointer",
+    borderRadius: 20,
   },
-});
+
+  [theme.breakpoints.down("sm")]: {
+    marginTop: 20,
+    marginBottom: 20,
+  },
+}));
 
 export const Description = styled("div")(({ theme }) => {
   return {
@@ -48,16 +56,24 @@ export const Description = styled("div")(({ theme }) => {
       padding: 10,
       marginTop: -36,
     },
-    [theme.breakpoints.down("md")]: {},
   };
 });
 
-export const InputHandler = styled("input")({
-  width: "40px",
-  textAlign: "center",
-  fontWeight: "bolder",
-});
+export const InputHandler = styled("input")(({ theme }) => {
+  return {
+    width: 60,
+    height: 20,
+    textAlign: "center",
+    fontWeight: "bolder",
+    marginLeft: 10,
+    marginRight: 10,
+    borderRadius: 11,
 
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 10,
+    },
+  };
+});
 export const ProductName = styled("div")(({ theme }) => {
   return {
     display: "flex",
