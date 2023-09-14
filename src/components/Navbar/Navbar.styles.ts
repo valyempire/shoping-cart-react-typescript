@@ -15,7 +15,7 @@ import { CustomNavLinkProps } from "./NavBar.types";
  */
 export const Container = styled("nav")(({ theme }) => {
   return {
-    backgroundColor: "#1c2331",
+    backgroundColor: "#4A55A2",
     // height: '8vh',
     display: "flex",
     justifyContent: "space-between",

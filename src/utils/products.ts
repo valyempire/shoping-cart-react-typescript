@@ -1,10 +1,10 @@
-import product1 from "../assets/products/Burberry.jpg";
-import product2 from "../assets/products/CalvinKlein.jpg";
-import product3 from "../assets/products/CarolinaHerrera.jpg";
+import cake from "../assets/products/cake_img.jpg";
+import flowers from "../assets/products/flowers_img.jpg";
+import watch1 from "../assets/products/watch_aviators.jpg";
 import product4 from "../assets/products/Chloe.jpg";
 import product5 from "../assets/products/Dior.jpg";
 import product6 from "../assets/products/GiorgioArmani.jpg";
-import product7 from "../assets/products/Guerlain.jpg";
+import watch2 from "../assets/products/watch_ulysse_nardinn.jpg";
 import product8 from "../assets/products/Hermes.jpg";
 import product9 from "../assets/products/JeanPaulGaultier.jpg";
 import product10 from "../assets/products/Mugler.jpg";
@@ -33,7 +33,7 @@ export const PRODUCTS: ProductData[] = [
     type: "Apa De Parfum 50 ml",
     price: 99.99,
     discount: 119.99,
-    productImage: product1,
+    productImage: cake,
     descriptions:
       "Burberry Goddess Eau de Parfum is a delightful choice for lovers of gourmand and aromatic scents. This unique scent is driven by a powerful trio of vanillas, which add a sweet and sensual note. At the top, you'll feel an infusion of vanilla with woody undertones that add a warm and refined note. At the heart of the fragrance is a richly sweet vanilla caviar that adds a more intense aroma and tint. At the base, we find a vanilla absolute enriched with bright lavender for an intriguing and balanced combination. Burberry Goddess Eau de Parfum will captivate you with its captivating and refined vanilla aroma, giving you a special and authentic fragrance experience.",
   },
@@ -42,7 +42,7 @@ export const PRODUCTS: ProductData[] = [
     productName: "CalvinKlein",
     price: 89.99,
     discount: 109.99,
-    productImage: product2,
+    productImage: flowers,
     descriptions: "Descriere pentru Calvin Klein...",
   },
   {
@@ -50,7 +50,7 @@ export const PRODUCTS: ProductData[] = [
     productName: "CarolinaHerrera",
     price: 69.99,
     discount: 99.99,
-    productImage: product3,
+    productImage: watch1,
 
     descriptions: "Descriere pentru Calvin Klein...",
   },
@@ -85,7 +85,7 @@ export const PRODUCTS: ProductData[] = [
     productName: "Guerlain",
     price: 119.99,
     discount: 139.99,
-    productImage: product7,
+    productImage: watch2,
     descriptions: "Descriere pentru Calvin Klein...",
   },
   {

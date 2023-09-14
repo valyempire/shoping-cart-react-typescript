@@ -6,7 +6,7 @@ export const CarouselContainer = styled("div")({
     margin: 0,
     boxSizing: "border-box",
   },
-  background: "#0a3d62",
+  // background: "#0a3d62",
   color: "azure",
   height: "100%",
   width: "100%",

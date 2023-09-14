@@ -23,7 +23,7 @@ export const SocialWrapper = styled("div")(({ theme }) => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#161c27",
+    backgroundColor: "#4A55A2",
     color: "white",
     padding: 7,
     [theme.breakpoints.down("sm")]: {
@@ -75,7 +75,7 @@ export const RowWrapper = styled("div")(() => {
     justifyContent: "center",
     alignItems: "flex-start",
     flexWrap: "wrap",
-    backgroundColor: "hsl(220deg 27.27% 15.1%)",
+    backgroundColor: "#7895CB",
     color: "white",
   };
 });
@@ -102,7 +102,7 @@ export const ColumnHeading = styled("p")(() => {
     display: "inline-block",
     "&:hover": {
       cursor: "pointer",
-      color: "#7493d0",
+      color: "red",
     },
   };
 });
@@ -112,7 +112,7 @@ export const ColumnHeading = styled("p")(() => {
  */
 export const RightsWrapper = styled("div")(() => {
   return {
-    backgroundColor: "#161c27",
+    backgroundColor: "#4A55A2",
     color: "white",
     fontSize: 17,
     padding: 16,
@@ -129,7 +129,7 @@ export const Link = styled("a")(() => {
     textDecoration: "inherit",
     "&:hover": {
       cursor: "pointer",
-      color: "#7493d0",
+      color: "red",
     },
   };
 });
@@ -153,7 +153,7 @@ export const IconWrapper = styled("span")(() => {
     marginLeft: 5,
     "&:hover": {
       cursor: "pointer",
-      color: "#7493d0",
+      color: "red",
     },
   };
 });
@@ -176,7 +176,7 @@ export const Paragraph = styled("p")(() => {
   return {
     "&:hover": {
       cursor: "pointer",
-      color: "#7493d0",
+      color: "red",
     },
   };
 });

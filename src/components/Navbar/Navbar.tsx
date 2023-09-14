@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Heart, ShoppingCart, Storefront } from "phosphor-react";
-
+import logo from "../../assets/logo/gift_logo2.jpg";
 import { useState } from "react";
 
 /**
@@ -17,13 +17,12 @@ import { ShopContext } from "../../context/shop-context";
 import {
   Container,
   ContainerParagraph,
-  Paragraph,
   ContainerLinks,
   MobileMenu,
   CustomNavLink,
   MobileNavLink,
   ContainerWrapper,
-  // CustomLogo,
+  CustomLogo,
   WishlistContainer,
   WishlistCounter,
 } from "./Navbar.styles";
@@ -136,8 +135,7 @@ export const NavBar: React.FC = () => {
       <ContainerWrapper>
         <ContainerParagraph>
           <Link style={{ textDecoration: "none" }} to="/">
-            <Paragraph>IT Shop</Paragraph>
-            {/* <img src={logo} alt="" /> */}
+            <CustomLogo src={logo} alt="" />
           </Link>
         </ContainerParagraph>
         {!isMobileView && navbarContent}
