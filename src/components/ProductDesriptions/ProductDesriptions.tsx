@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-
 import React from "react";
 import { useParams } from "react-router-dom"; // Pentru a prelua id-ul produsului din URL
 import { PRODUCTS } from "../../utils/products";

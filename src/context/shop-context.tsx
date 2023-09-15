@@ -66,6 +66,7 @@ export const ShopContextProvider: React.FC<ShopContextProps> = (props) => {
       }
     }
     return parseFloat(totalAmount.toFixed(2));
+    // return totalAmount;
   };
 
   const addToCart = (itemId: number): void => {

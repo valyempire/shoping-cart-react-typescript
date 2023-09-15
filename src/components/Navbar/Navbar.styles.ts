@@ -30,8 +30,9 @@ export const Container = styled("nav")(({ theme }) => {
       justifyContent: "center",
       flexDirection: "column",
       height: "auto",
-      marginBottom: -10,
-      width: "52vh",
+      // marginBottom: -10,
+      width: "53vh",
+      marginBottom: 0,
     },
   };
 });
@@ -110,7 +111,7 @@ export const CustomNavLink = styled(NavLink, {
     textAlign: "center",
     fontSize: 30,
     position: "relative",
-    color: "red",
+    color: "#fff",
     "&::after": {
       width: "0%",
       height: 4,
@@ -133,7 +134,7 @@ export const CustomNavLink = styled(NavLink, {
       color: "#000000",
     },
     ...(isActive && {
-      color: "#000000",
+      color: "#ffff",
       "&::after": {
         width: "100%",
         top: 34,

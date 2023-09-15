@@ -126,7 +126,7 @@ export const CustomButton = styled(Button)(() => ({
   backgroundColor: "#7493d0",
   color: "#fff",
   borderRadius: "8px",
-  padding: "10px 70px",
+  padding: "10px 20px",
   fontSize: "16px",
   fontWeight: "bold",
   textTransform: "uppercase",

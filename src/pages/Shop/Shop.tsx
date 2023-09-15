@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Item } from "../../components/Item/Item";
 import { Carousel } from "../../components/Carousel";
@@ -75,7 +76,7 @@ export const Shop = () => {
       });
       setFilteredProducts(sortedProducts);
     }
-  }, [sortOrder, filteredProducts]);
+  }, [sortOrder]);
 
   const productsPerPage = 9;
   const lastIndex = currentPage * productsPerPage;

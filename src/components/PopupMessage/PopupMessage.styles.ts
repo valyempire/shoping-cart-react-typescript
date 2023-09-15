@@ -11,7 +11,7 @@ export const Container = styled("div")({
   zIndex: 9999,
   padding: 20,
   borderRadius: 5,
-  backgroundColor: "#7493d0",
+  backgroundColor: "#DC143C",
   boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
   marginBottom: 10,
   marginTop: 10,

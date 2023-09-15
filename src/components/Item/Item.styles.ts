@@ -6,7 +6,7 @@ import { styled } from "@mui/system";
 export const Container = styled("div")(({ theme }) => {
   return {
     borderRadius: "15px",
-    width: "90%",
+    width: "80%",
     height: "100%",
     display: "flex",
     flexDirection: "column",
@@ -14,19 +14,23 @@ export const Container = styled("div")(({ theme }) => {
     alignItems: "center",
     boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
     marginBottom: 50,
-    backgroundColor: "rgba(215, 205, 192, 0.5)",
+    backgroundColor: "#2c8bdc4a",
 
     "&:hover": {
       cursor: "pointer",
     },
+    [theme.breakpoints.down("md")]: {
+      width: "89%",
+    },
     [theme.breakpoints.down("sm")]: {
       boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
       borderRadius: "25px",
-      marginLeft: 35,
+      marginLeft: 40,
       marginBottom: 5,
       width: "100%",
+      // marginLeft: 13,
+      marginTop: 10,
     },
-    [theme.breakpoints.down("md")]: {},
   };
 });
 

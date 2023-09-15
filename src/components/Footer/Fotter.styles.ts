@@ -63,6 +63,10 @@ export const IconLink = styled("a")(() => {
     marginLeft: 20,
     marginRight: 20,
     color: "white",
+    "&:hover": {
+      cursor: "pointer",
+      color: "#d7cdc080",
+    },
   };
 });
 
@@ -75,7 +79,7 @@ export const RowWrapper = styled("div")(() => {
     justifyContent: "center",
     alignItems: "flex-start",
     flexWrap: "wrap",
-    backgroundColor: "#7895CB",
+    backgroundColor: "#4a55a2",
     color: "white",
   };
 });
@@ -102,7 +106,7 @@ export const ColumnHeading = styled("p")(() => {
     display: "inline-block",
     "&:hover": {
       cursor: "pointer",
-      color: "red",
+      color: "#d7cdc080",
     },
   };
 });
@@ -129,7 +133,7 @@ export const Link = styled("a")(() => {
     textDecoration: "inherit",
     "&:hover": {
       cursor: "pointer",
-      color: "red",
+      color: "#d7cdc080",
     },
   };
 });
@@ -153,7 +157,7 @@ export const IconWrapper = styled("span")(() => {
     marginLeft: 5,
     "&:hover": {
       cursor: "pointer",
-      color: "red",
+      color: "#d7cdc080",
     },
   };
 });
@@ -168,7 +172,7 @@ export const Underline = styled("span")(() => {
     left: 0,
     width: "50%",
     height: 1,
-    backgroundColor: "hsl(220deg 29.77% 41.63%)",
+    backgroundColor: "white",
   };
 });
 
@@ -176,7 +180,7 @@ export const Paragraph = styled("p")(() => {
   return {
     "&:hover": {
       cursor: "pointer",
-      color: "red",
+      color: "#d7cdc080",
     },
   };
 });

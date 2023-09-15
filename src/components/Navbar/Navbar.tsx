@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Heart, ShoppingCart, Storefront } from "phosphor-react";
-import logo from "../../assets/logo/gift_logo2.jpg";
+import logo from "../../assets/logo/logo.png";
 import { useState } from "react";
 
 /**

@@ -11,8 +11,9 @@ import {
   CartMessage,
   ContainerChechout,
   Title,
+  CustomButton,
 } from "./Cart.styles";
-import { CustomButton } from "../Shop/Shop.style";
+// import { CustomButton } from "../Shop/Shop.style";
 
 export const Cart = () => {
   const context = useContext<ContextValueInterface | null>(ShopContext);
@@ -45,7 +46,7 @@ export const Cart = () => {
           <p> Subtotal: ${totalAmount} </p>
           <ContainerButton className="btn-checkout">
             <CustomButton onClick={() => history.push("/")}>
-              Continue Shopping
+              Go to Shopp
             </CustomButton>
             <CustomButton
               onClick={() => {
