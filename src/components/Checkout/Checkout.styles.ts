@@ -1,12 +1,20 @@
 import { Button, Typography, TextField } from "@mui/material";
 import { styled } from "@mui/system";
 
-export const Container = styled("div")({
-  display: "flex",
-  flexDirection: "column",
-  maxWidth: "400px",
-  margin: "0 auto",
-  padding: "20px",
+export const Container = styled("div")(({ theme }) => {
+  return {
+    display: "flex",
+    flexDirection: "column",
+    maxWidth: "400px",
+    margin: "0 auto",
+    padding: "20px",
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column",
+    },
+  };
 });
 
 export const FormTitle = styled(Typography)({

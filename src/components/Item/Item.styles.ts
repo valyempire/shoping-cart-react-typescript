@@ -48,6 +48,15 @@ export const Image = styled("img")(({ theme }) => {
     [theme.breakpoints.down("md")]: {},
   };
 });
+export const HeartButton = styled("button")(({ theme }) => {
+  return {
+    background: "none",
+    border: "none",
+    padding: 0,
+    cursor: "pointer",
+    [theme.breakpoints.down("sm")]: {},
+  };
+});
 
 export const Descriptions = styled("div")({
   marginTop: 20,
@@ -85,5 +94,5 @@ export const ProductName = styled("p")({
 
 export const ProductType = styled("b")({
   marginTop: 10,
-  whiteSpace: "nowrap",
+  // whiteSpace: "nowrap",
 });

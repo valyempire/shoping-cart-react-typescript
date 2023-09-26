@@ -19,6 +19,7 @@ import {
   WishListTitle,
   WishListContainer,
   ProductName,
+  RemoveButton,
 } from "./WishList.styles";
 import { CustomButton } from "../Shop/Shop.style";
 import { Link } from "react-router-dom";
@@ -56,17 +57,9 @@ export const WishList: React.FC = () => {
         <Description className="description">
           <div>
             <CustomImage src={product.productImage} />
-            <button
-              style={{
-                background: "none",
-                border: "none",
-                padding: 0,
-                cursor: "pointer",
-              }}
-              onClick={() => handleRemoveFromWishlist(product.id)}
-            >
+            <RemoveButton onClick={() => handleRemoveFromWishlist(product.id)}>
               <HeartIcon className="iulian" icon={faHeart} beat size="2xl" />
-            </button>
+            </RemoveButton>
             <Price style={{ textDecoration: "line-through" }}>
               Price: ${product.discount}
             </Price>
@@ -110,7 +103,12 @@ export const WishList: React.FC = () => {
   return (
     <WishListContainer>
       <WishListTitle>Wishlist</WishListTitle>
-      {wishlistItems}
+      {/* {wishlistItems} */}
+      {Object.keys(wishlist).length === 0 ? (
+        <p>No products in Wishlist</p>
+      ) : (
+        wishlistItems
+      )}
       <ContainerButtons className="container-buttons">
         <Link to={"/"}>
           <CustomButton>Go to Shop</CustomButton>

@@ -9,6 +9,7 @@ import {
   AddToCartButton,
   ProductName,
   ProductType,
+  HeartButton,
 } from "./Item.styles";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,12 +28,9 @@ export const Item: React.FC<ProductProps> = (props) => {
 
   const { addToCart, cartItems, addToWishlist, removeFromWishlist } = context;
   const cartItemCount = cartItems[product.id];
-
   const [isHeartPressed, setIsHeartPressed] = useState(false);
-
-  // const [showMessage, setShowMessage] = useState(false);
-  const [showCartMessage, setShowCartMessage] = useState(false); // Adaugă această variabilă
-  const [showWishlistMessage, setShowWishlistMessage] = useState(false); // Adaugă această variabilă
+  const [showCartMessage, setShowCartMessage] = useState(false);
+  const [showWishlistMessage, setShowWishlistMessage] = useState(false);
   const [showDeleteMessage, setShowDeleteMessage] = useState(false);
 
   const addWishWithMessage = (itemId: number) => {
@@ -53,7 +51,7 @@ export const Item: React.FC<ProductProps> = (props) => {
     } else {
       setIsHeartPressed(false);
       removeFromWishlist(product.id);
-      setShowDeleteMessage(true); // Afișează mesajul atunci când elimină din wishlist
+      setShowDeleteMessage(true);
       setTimeout(() => {
         setShowDeleteMessage(false);
       }, 2000);
@@ -90,21 +88,13 @@ export const Item: React.FC<ProductProps> = (props) => {
         >
           Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
         </AddToCartButton>
-        <button
-          style={{
-            background: "none",
-            border: "none",
-            padding: 0,
-            cursor: "pointer",
-          }}
-          onClick={toggleHeart}
-        >
+        <HeartButton onClick={toggleHeart}>
           <FontAwesomeIcon
             icon={isHeartPressed ? faSolidHeart : faRegularHeart}
             size="2xl"
             style={{ color: "#ff0000" }}
           />
-        </button>
+        </HeartButton>
       </div>
       {showCartMessage && (
         <PopupMessage

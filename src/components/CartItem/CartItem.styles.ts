@@ -8,7 +8,7 @@ export const CartItemContainer = styled("div")(({ theme }) => {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
+    boxShadow: "0px 3px 15px rgba(0 12 53 / 79%)",
     borderRadius: "25px",
     margin: "30px",
     [theme.breakpoints.down("sm")]: {
@@ -19,7 +19,6 @@ export const CartItemContainer = styled("div")(({ theme }) => {
       aligntems: "center",
       flexDirection: "column",
     },
-    [theme.breakpoints.down("md")]: {},
   };
 });
 

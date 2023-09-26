@@ -8,6 +8,13 @@ const CustomPrevArrow = () => <div></div>;
 const CustomNextArrow = () => <div></div>;
 
 export const Carousel: React.FC = () => {
+  const isMobile = window.innerWidth <= 760; // Definește o variabilă care verifică dacă ecranul este în modul mobil
+
+  // Dacă ecranul este în modul mobil, nu afișa caruselul
+  if (isMobile) {
+    return null;
+  }
+
   const settings = {
     className: "center",
     centerMode: true,

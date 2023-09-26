@@ -104,6 +104,16 @@ export const Sort = styled("div")(({ theme }) => {
     },
   };
 });
+export const SearchMessage = styled("div")(({ theme }) => {
+  return {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 40,
+    fontSize: 25,
+    [theme.breakpoints.down("sm")]: {},
+  };
+});
 
 export const Label = styled("label")(() => {
   return {

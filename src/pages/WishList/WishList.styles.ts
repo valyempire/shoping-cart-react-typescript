@@ -28,9 +28,9 @@ export const CustomImage = styled("img")(({ theme }) => {
     marginRight: 40,
     marginTop: 50,
     borderRadius: 10,
-    transition: "transform 0.3s ease-in",
+    // transition: "transform 0.3s ease-in",
     "&:hover": {
-      transform: "scale(1.1)",
+      // transform: "scale(1.1)",
       cursor: "pointer",
       borderRadius: 10,
     },
@@ -84,6 +84,17 @@ export const Price = styled("p")(({ theme }) => {
     },
   };
 });
+export const RemoveButton = styled("button")(({ theme }) => {
+  return {
+    background: "none",
+    border: "none",
+    padding: 0,
+    cursor: "pointer",
+
+    [theme.breakpoints.down("sm")]: {},
+  };
+});
+
 export const WishListTitle = styled("h2")(({ theme }) => {
   return {
     display: "flex",
@@ -129,6 +140,7 @@ export const ContainerButtons = styled("div")(({ theme }) => {
     },
     [theme.breakpoints.down("sm")]: {
       marginTop: 10,
+      gap: 10,
     },
   };
 });
