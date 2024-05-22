@@ -10,8 +10,11 @@ export const FooterContainer = styled("footer")(({ theme }) => {
   return {
     textAlign: "center",
     width: "100%",
+    backgroundColor: "#4A55A2",
+    color: "white",
+    padding: "20px 0",
     [theme.breakpoints.down("sm")]: {
-      width: "52vh",
+      padding: "10px 0",
     },
   };
 });
@@ -25,7 +28,8 @@ export const SocialWrapper = styled("div")(({ theme }) => {
     alignItems: "center",
     backgroundColor: "#4A55A2",
     color: "white",
-    padding: 7,
+    // padding: 7,
+    padding: "10px 20px",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
     },
@@ -47,11 +51,15 @@ export const ContainerParagraph = styled("div")(({ theme }) => {
 /**
  * Stiled the SocialParagraph
  */
-export const SocialParagraph = styled("p")(() => {
+export const SocialParagraph = styled("p")(({ theme }) => {
   return {
     textAlign: "left",
     marginRight: "auto",
     marginLeft: 20,
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: 0,
+      marginBottom: 10,
+    },
   };
 });
 
@@ -87,11 +95,14 @@ export const RowWrapper = styled("div")(() => {
 /**
  * Stiled the ColumnWrapper
  */
-export const ColumnWrapper = styled("div")(() => {
+export const ColumnWrapper = styled("div")(({ theme }) => {
   return {
     margin: "0 20px",
     width: 200,
     textAlign: "left",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
   };
 });
 

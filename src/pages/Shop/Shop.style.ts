@@ -21,6 +21,7 @@ export const ProductsGrid = styled("div")(({ theme }) => {
     width: "100%",
     height: "auto",
     display: "grid",
+    maxWidth: "100%",
     gridTemplateColumns: "1fr 1fr 1fr",
     placeItems: "center",
     gap: 20,
@@ -29,7 +30,6 @@ export const ProductsGrid = styled("div")(({ theme }) => {
       gridTemplateColumns: "1fr 1fr",
     },
     [theme.breakpoints.down("sm")]: {
-      // paddingRight: 20,
       gridTemplateColumns: "1fr",
     },
   };
@@ -52,7 +52,6 @@ export const StylesButton = styled("button")({
   height: "40px",
   border: "1px solid #ccc",
   borderRadius: "5px",
-  // fontSize: '16px',
 });
 
 export const SearchContainer = styled("div")(({ theme }) => {
@@ -104,7 +103,7 @@ export const Sort = styled("div")(({ theme }) => {
     },
   };
 });
-export const SearchMessage = styled("div")(({ theme }) => {
+export const SearchMessage = styled("h2")(({ theme }) => {
   return {
     display: "flex",
     justifyContent: "center",

@@ -12,12 +12,13 @@ export const CartItemContainer = styled("div")(({ theme }) => {
     borderRadius: "25px",
     margin: "30px",
     [theme.breakpoints.down("sm")]: {
-      width: "85%",
+      width: "100%",
       margin: 10,
       display: "flex",
       justifyContent: "center",
       aligntems: "center",
       flexDirection: "column",
+      marginTop: 30,
     },
   };
 });

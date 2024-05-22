@@ -16,23 +16,19 @@ import { CustomNavLinkProps } from "./NavBar.types";
 export const Container = styled("nav")(({ theme }) => {
   return {
     backgroundColor: "#4A55A2",
-    // height: '8vh',
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     padding: "0 20px",
     fontSize: 23,
     color: "#000000",
-    margin: "-8px",
+    margin: 0,
+    width: "100%",
     [theme.breakpoints.down("sm")]: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
       flexDirection: "column",
       height: "auto",
-      // marginBottom: -10,
-      width: "53vh",
-      marginBottom: 0,
+      padding: "10px 0",
+      width: "100%",
     },
   };
 });
@@ -45,8 +41,8 @@ export const ContainerWrapper = styled("div")(() => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    flexGrow: 1,
-    marginRight: "20px",
+    width: "100%",
+    marginRight: 0,
   };
 });
 
@@ -88,11 +84,12 @@ export const Paragraph = styled("p")(({ theme }) => {
  */
 export const ContainerLinks = styled("div")(({ theme }) => {
   return {
-    paddingRight: 36,
     display: "flex",
     gap: 20,
+    paddingRight: 0,
     [theme.breakpoints.down("sm")]: {
-      marginLeft: 44,
+      width: "100%",
+      justifyContent: "center",
     },
   };
 });

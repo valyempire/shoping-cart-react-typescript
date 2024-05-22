@@ -23,7 +23,7 @@ import {
   MobileNavLink,
   ContainerWrapper,
   CustomLogo,
-  WishlistContainer,
+  // WishlistContainer,
   WishlistCounter,
 } from "./Navbar.styles";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -65,7 +65,7 @@ export const NavBar: React.FC = () => {
    */
   const navbarContent = (
     <>
-      <ContainerLinks className="iulian">
+      <ContainerLinks>
         <CustomNavLink
           exact={true}
           to="/"
@@ -80,12 +80,12 @@ export const NavBar: React.FC = () => {
           activeStyle={{ color: "#ffff" }}
           title="Wishlist"
         >
-          <WishlistContainer>
+          <div>
             <Heart size={32} />
             {getWishlistItemCount() > 0 && (
               <WishlistCounter>{getWishlistItemCount()}</WishlistCounter>
             )}
-          </WishlistContainer>
+          </div>
         </CustomNavLink>
         <CustomNavLink
           exact
@@ -93,12 +93,12 @@ export const NavBar: React.FC = () => {
           activeStyle={{ color: "#ffff" }}
           title="Cart"
         >
-          <WishlistContainer>
+          <div>
             <ShoppingCart size={32} />
             {getCartItemCount() > 0 && (
               <WishlistCounter>{getCartItemCount()}</WishlistCounter>
             )}
-          </WishlistContainer>
+          </div>
         </CustomNavLink>
       </ContainerLinks>
       <MobileMenu isOpen={isMobileMenuOpen} to={""}>
@@ -116,7 +116,9 @@ export const NavBar: React.FC = () => {
           activeStyle={{ color: "#ffff" }}
           onClick={toggleMobileMenu}
         >
-          <Heart size={32} />
+          <div>
+            <Heart size={32} />
+          </div>
         </MobileNavLink>
         <MobileNavLink
           exact
@@ -124,7 +126,9 @@ export const NavBar: React.FC = () => {
           activeStyle={{ color: "#ffff" }}
           onClick={toggleMobileMenu}
         >
-          <ShoppingCart size={32} />
+          <div>
+            <ShoppingCart size={32} />
+          </div>
         </MobileNavLink>
       </MobileMenu>
     </>

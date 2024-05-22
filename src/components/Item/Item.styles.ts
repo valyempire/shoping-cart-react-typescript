@@ -7,6 +7,7 @@ export const Container = styled("div")(({ theme }) => {
   return {
     borderRadius: "15px",
     width: "80%",
+    maxWidth: "100%",
     height: "100%",
     display: "flex",
     flexDirection: "column",
@@ -25,10 +26,9 @@ export const Container = styled("div")(({ theme }) => {
     [theme.breakpoints.down("sm")]: {
       boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
       borderRadius: "25px",
-      marginLeft: 40,
+      marginLeft: 20,
       marginBottom: 5,
       width: "100%",
-      // marginLeft: 13,
       marginTop: 10,
     },
   };
@@ -94,5 +94,4 @@ export const ProductName = styled("p")({
 
 export const ProductType = styled("b")({
   marginTop: 10,
-  // whiteSpace: "nowrap",
 });

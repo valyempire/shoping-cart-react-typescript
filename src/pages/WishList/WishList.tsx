@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { ContextValueInterface, ShopContext } from "../../context/shop-context";
 import { PRODUCTS } from "../../utils/products";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-// import { AddToCartButton } from '../../components/Item/Item.styles';
 import {
   InputHandler,
   Description,
@@ -41,7 +40,7 @@ export const WishList: React.FC = () => {
     updateCartItemCount,
   } = context;
 
-  // Afiseaza produsele din lista de dorinte
+  // Show the products from the wish list
   const wishlistItems = Object.keys(wishlist).map((itemId) => {
     const product = PRODUCTS.find((p) => p.id === parseInt(itemId, 10));
     if (!product) {
@@ -103,9 +102,8 @@ export const WishList: React.FC = () => {
   return (
     <WishListContainer>
       <WishListTitle>Wishlist</WishListTitle>
-      {/* {wishlistItems} */}
       {Object.keys(wishlist).length === 0 ? (
-        <p>No products in Wishlist</p>
+        <h2>No products in Wishlist</h2>
       ) : (
         wishlistItems
       )}

@@ -72,7 +72,7 @@ export const Title = styled("h2")(({ theme }) => {
   };
 });
 
-export const ContainerButton = styled("button")(({ theme }) => {
+export const ContainerButton = styled("div")(({ theme }) => {
   return {
     display: "flex",
     gap: 30,

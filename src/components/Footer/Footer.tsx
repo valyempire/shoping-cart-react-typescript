@@ -20,7 +20,6 @@ import {
  */
 import {
   faEnvelope,
-  faFax,
   faHouse,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
@@ -127,10 +126,6 @@ export const Footer: React.FC = () => {
           <p>
             <FontAwesomeIcon icon={faPhone} />{" "}
             <Link href="tel:+40741412636">+4 0741 41 26 36</Link>
-          </p>
-          <p>
-            <FontAwesomeIcon icon={faFax} />{" "}
-            <Link href="fax:0123456789">+01 234 567 89</Link>
           </p>
         </ColumnWrapper>
       </RowWrapper>
