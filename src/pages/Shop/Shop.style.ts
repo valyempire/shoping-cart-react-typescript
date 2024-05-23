@@ -42,6 +42,10 @@ export const SearchBar = styled("input")({
   borderRadius: "5px",
   fontSize: "16px",
   flexShrink: 1,
+  marginRight: 3,
+  "&:hover": {
+    cursor: "pointer",
+  },
 });
 
 export const StylesButton = styled("button")({
@@ -52,6 +56,9 @@ export const StylesButton = styled("button")({
   height: "40px",
   border: "1px solid #ccc",
   borderRadius: "5px",
+  "&:hover": {
+    cursor: "pointer",
+  },
 });
 
 export const SearchContainer = styled("div")(({ theme }) => {
@@ -128,6 +135,9 @@ export const Select = styled("select")(() => {
     marginLeft: 10,
     color: "black",
     fontWeight: 600,
+    "&:hover": {
+      cursor: "pointer",
+    },
   };
 });
 

@@ -161,6 +161,23 @@ export const ContactInfo = styled("p")(() => {
 });
 
 /**
+ * Stiled the ContainerIcon
+ */
+export const ContainerIcon = styled("div")(({ theme }) => {
+  return {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 10,
+    flexWrap: "nowrap",
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "flex-start",
+      gap: 0,
+    },
+  };
+});
+
+/**
  * Stiled the IconWrapper
  */
 export const IconWrapper = styled("span")(() => {

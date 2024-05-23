@@ -38,6 +38,7 @@ import {
   RightsWrapper,
   Link,
   ContactInfo,
+  ContainerIcon,
   IconWrapper,
   Underline,
   ContainerParagraph,
@@ -56,7 +57,7 @@ export const Footer: React.FC = () => {
             Get connected with us on social networks:
           </SocialParagraph>
         </ContainerParagraph>
-        <div className="container-icon">
+        <ContainerIcon>
           <IconLink href="https://www.facebook.com" target="_blank">
             <FontAwesomeIcon icon={faFacebook} />
           </IconLink>
@@ -69,13 +70,16 @@ export const Footer: React.FC = () => {
           <IconLink href="https://www.instagram.com" target="_blank">
             <FontAwesomeIcon icon={faInstagram} />
           </IconLink>
-          <IconLink href="https://www.linkedin.com" target="_blank">
+          <IconLink
+            href="https://www.linkedin.com/in/valerica-bocanel/"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faLinkedin} />
           </IconLink>
-          <IconLink href="https://www.github.com" target="_blank">
+          <IconLink href="https://github.com/valyempire" target="_blank">
             <FontAwesomeIcon icon={faGithub} />
           </IconLink>
-        </div>
+        </ContainerIcon>
       </SocialWrapper>
       <RowWrapper>
         <ColumnWrapper>

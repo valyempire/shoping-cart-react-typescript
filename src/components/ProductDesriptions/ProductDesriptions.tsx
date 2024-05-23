@@ -49,7 +49,6 @@ export const ProductDescriptions: React.FC = () => {
             Price: ${product.discount}
           </Price>
           <Price> Price: ${product.price}</Price>
-
           <CountHandler className="countHandler">
             <StylesParagraph>Add To Cart</StylesParagraph>
             <StylesButton
@@ -58,14 +57,12 @@ export const ProductDescriptions: React.FC = () => {
             >
               -
             </StylesButton>
-
             <InputHandler
               value={cartItems[product.id]}
               onChange={(e) =>
                 updateCartItemCount(Number(e.target.value), product.id)
               }
             />
-
             <StylesButton onClick={() => addToCart(product.id)}>
               {" "}
               +{" "}

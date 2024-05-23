@@ -1,121 +1,104 @@
 import { Button } from "@mui/material";
 import { styled } from "@mui/system";
 
-export const Description = styled("div")(({ theme }) => {
-  return {
-    display: "flex",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    flexDirection: "row",
+export const Description = styled("div")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  flexDirection: "row",
 
-    [theme.breakpoints.down("sm")]: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "column",
-    },
-  };
-});
-export const CustomImage = styled("img")(({ theme }) => {
-  return {
-    width: 400,
-    marginRight: 40,
-    marginTop: 50,
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    textAlign: "center",
+  },
+}));
+
+export const CustomImage = styled("img")(({ theme }) => ({
+  width: 400,
+  marginRight: 40,
+  marginTop: 50,
+  borderRadius: 10,
+  transition: "transform 0.3s ease-in",
+  "&:hover": {
+    transform: "scale(1.1)",
+    cursor: "pointer",
     borderRadius: 10,
-    transition: "transform 0.3s ease-in",
-    "&:hover": {
-      transform: "scale(1.1)",
-      cursor: "pointer",
-      borderRadius: 10,
-    },
+  },
 
-    [theme.breakpoints.down("sm")]: {
-      marginLeft: 50,
-      marginTop: 20,
-      width: 230,
-    },
-  };
-});
-
-export const Paragraph = styled("p")(({ theme }) => {
-  return {
-    width: 300,
-    marginRight: -20,
-
-    [theme.breakpoints.down("sm")]: {
-      width: 300,
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      marginLeft: 0,
-    },
-  };
-});
-export const ProductName = styled("div")(({ theme }) => {
-  return {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-
-    [theme.breakpoints.down("sm")]: {},
-  };
-});
-
-export const Price = styled("p")(({ theme }) => {
-  return {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    fontWeight: 600,
-
-    [theme.breakpoints.down("sm")]: {
-      fontWeight: 600,
-    },
-  };
-});
-
-export const ContainerProduct = styled("div")(({ theme }) => {
-  return {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-    width: "40%",
+  [theme.breakpoints.down("sm")]: {
+    marginLeft: "auto",
+    marginRight: "auto",
     marginTop: 20,
+    width: 230,
+  },
+}));
 
-    [theme.breakpoints.down("sm")]: {
-      marginTop: 0,
-    },
-  };
-});
-export const ContainerButtons = styled("div")(({ theme }) => {
-  return {
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    gap: 10,
+export const Paragraph = styled("p")(({ theme }) => ({
+  width: 300,
+  marginRight: -20,
 
-    [theme.breakpoints.down("md")]: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      marginTop: 100,
-      gap: 40,
-    },
-    [theme.breakpoints.down("sm")]: {
-      marginTop: 10,
-    },
-  };
-});
-export const CountHandler = styled("div")(({ theme }) => {
-  return {
-    [theme.breakpoints.down("sm")]: {
-      marginTop: 20,
-      marginLeft: 50,
-    },
-  };
-});
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+    textAlign: "center",
+    marginRight: 0,
+    padding: 15,
+  },
+}));
+
+export const ProductName = styled("div")(() => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
+}));
+
+export const Price = styled("p")(() => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  fontWeight: 600,
+  margin: "10px 0",
+}));
+
+export const ContainerProduct = styled("div")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
+  width: "40%",
+  marginTop: 20,
+
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+    marginTop: 0,
+  },
+}));
+
+export const ContainerButtons = styled("div")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "flex-end",
+  alignItems: "center",
+  gap: 10,
+  marginTop: 20,
+
+  [theme.breakpoints.down("md")]: {
+    justifyContent: "center",
+  },
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    gap: 20,
+  },
+}));
+
+export const CountHandler = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  gap: 10,
+
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  },
+}));
 
 export const StylesButton = styled(Button)(() => ({
   backgroundColor: "#7493d0",
@@ -133,43 +116,37 @@ export const StylesButton = styled(Button)(() => ({
   },
 }));
 
-export const InputHandler = styled("input")(({ theme }) => {
-  return {
-    width: 60,
-    height: 20,
-    textAlign: "center",
-    fontWeight: "bolder",
-    marginLeft: 10,
-    marginRight: 10,
-    borderRadius: 11,
+export const InputHandler = styled("input")(({ theme }) => ({
+  width: 60,
+  height: 20,
+  textAlign: "center",
+  fontWeight: "bolder",
+  marginLeft: 10,
+  marginRight: 10,
+  borderRadius: 11,
 
-    [theme.breakpoints.down("sm")]: {
-      marginTop: 10,
-    },
-  };
-});
+  [theme.breakpoints.down("sm")]: {
+    width: "auto",
+  },
+}));
 
-export const StylesParagraph = styled("p")(({ theme }) => {
-  return {
-    fontWeight: 600,
+export const StylesParagraph = styled("p")(() => ({
+  fontWeight: 600,
+  marginBottom: 10,
+}));
 
-    [theme.breakpoints.down("sm")]: {},
-  };
-});
-export const Title = styled("h2")(({ theme }) => {
-  return {
-    marginTop: -80,
+export const Title = styled("h2")(({ theme }) => ({
+  marginTop: -80,
 
-    [theme.breakpoints.down("sm")]: { marginTop: 30, marginLeft: 33 },
-  };
-});
+  [theme.breakpoints.down("sm")]: {
+    marginTop: 30,
+  },
+}));
 
-export const ProductDescriptionsTitle = styled("h1")(({ theme }) => {
-  return {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-
-    [theme.breakpoints.down("sm")]: {},
-  };
-});
+export const ProductDescriptionsTitle = styled("h1")(() => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center",
+  width: "100%",
+}));
